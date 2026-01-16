@@ -39,16 +39,18 @@ const Header = () => {
             }}
         >
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }} className="header-logo">
                     <img
                         src={logoIcon}
                         alt="eFlybe Icon"
-                        style={{ height: '32px', objectFit: 'contain' }}
+                        style={{ height: '28px', objectFit: 'contain' }}
+                        className="logo-icon"
                     />
                     <img
                         src={logoText}
                         alt="eFlybe Technologies"
-                        style={{ height: '32px', objectFit: 'contain' }}
+                        style={{ height: '24px', objectFit: 'contain' }}
+                        className="logo-text"
                     />
                 </Link>
 
@@ -67,7 +69,7 @@ const Header = () => {
                             {link.name}
                         </Link>
                     ))}
-                    <Link to="/contact" className="btn btn-primary">
+                    <Link to="/contact" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem' }}>
                         Get Started
                     </Link>
                 </nav>
@@ -75,10 +77,16 @@ const Header = () => {
                 {/* Mobile Toggle */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    style={{ display: 'none', background: 'none' }}
+                    style={{
+                        display: 'none',
+                        background: 'none',
+                        border: 'none',
+                        padding: '0.5rem',
+                        cursor: 'pointer'
+                    }}
                     className="mobile-toggle"
                 >
-                    {isOpen ? <X color="var(--primary-navy)" /> : <Menu color="var(--primary-navy)" />}
+                    {isOpen ? <X size={28} color="var(--primary-navy)" /> : <Menu size={28} color="var(--primary-navy)" />}
                 </button>
             </div>
 
@@ -86,29 +94,38 @@ const Header = () => {
             {isOpen && (
                 <div
                     style={{
-                        position: 'absolute',
+                        position: 'fixed',
                         top: '100%',
                         left: 0,
                         width: '100%',
+                        height: '100vh',
                         backgroundColor: 'var(--white)',
-                        padding: '1.5rem',
-                        boxShadow: 'var(--shadow-md)',
+                        padding: '2.5rem 1.5rem',
                         display: 'flex',
                         flexDirection: 'column',
-                        gap: '1rem'
+                        gap: '1.5rem',
+                        zIndex: 100,
+                        borderTop: '1px solid #f1f5f9'
                     }}
+                    className="mobile-nav-panel"
                 >
                     {navLinks.map((link) => (
                         <Link
                             key={link.path}
                             to={link.path}
                             onClick={() => setIsOpen(false)}
-                            style={{ fontWeight: 500, padding: '0.5rem 0' }}
+                            style={{
+                                fontSize: '1.25rem',
+                                fontWeight: 600,
+                                padding: '1rem 0',
+                                borderBottom: '1px solid #f8fafc',
+                                color: location.pathname === link.path ? 'var(--secondary-blue)' : 'var(--text-main)'
+                            }}
                         >
                             {link.name}
                         </Link>
                     ))}
-                    <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary">
+                    <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary" style={{ marginTop: '2rem', padding: '1.25rem' }}>
                         Get Started
                     </Link>
                 </div>
@@ -118,6 +135,12 @@ const Header = () => {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-toggle { display: block !important; }
+          .logo-text { display: none !important; }
+          .logo-icon { height: 32px !important; }
+          header { padding: 0.75rem 0 !important; }
+        }
+        @media (min-width: 480px) and (max-width: 768px) {
+           .logo-text { display: block !important; }
         }
       `}</style>
         </header>

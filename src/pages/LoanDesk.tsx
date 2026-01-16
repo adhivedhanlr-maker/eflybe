@@ -75,9 +75,20 @@ const LoanDesk = () => {
             <section className="section-padding" style={{ backgroundColor: 'var(--primary-navy)', color: 'white' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
                     <h2 style={{ color: 'white', marginBottom: '2rem' }}>Ready to generate your first report?</h2>
-                    <button className="btn btn-primary" style={{ backgroundColor: 'var(--accent-teal)' }}>Get Started with LoanDesk</button>
+                    <button className="btn btn-primary" style={{ backgroundColor: 'var(--accent-teal)', padding: '1rem 2rem' }}>Get Started with LoanDesk</button>
                 </div>
             </section>
+
+            <style>{`
+        @media (max-width: 968px) {
+          .loandesk-page h1 { font-size: 2.5rem !important; }
+          .container { grid-template-columns: 1fr !important; gap: 3rem !important; }
+        }
+        @media (max-width: 480px) {
+          .loandesk-page h1 { font-size: 2rem !important; }
+          .section-padding { padding: 3rem 0 !important; }
+        }
+      `}</style>
         </div>
     );
 };

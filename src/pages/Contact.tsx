@@ -13,7 +13,7 @@ const Contact = () => {
             </section>
 
             <section className="section-padding">
-                <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem' }}>
+                <div className="container contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem' }}>
                     <div>
                         <h2 style={{ marginBottom: '2rem' }}>Get in Touch</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -50,7 +50,7 @@ const Contact = () => {
                     <div className="card">
                         <h3 style={{ marginBottom: '1.5rem' }}>Send a Message</h3>
                         <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }} onSubmit={(e) => e.preventDefault()}>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                     <label style={{ fontSize: '0.9rem', fontWeight: 600 }}>Name</label>
                                     <input type="text" placeholder="John Doe" style={{ padding: '0.75rem', border: '1px solid #e2e8f0', borderRadius: '8px' }} />
@@ -68,11 +68,22 @@ const Contact = () => {
                                 <label style={{ fontSize: '0.9rem', fontWeight: 600 }}>Message</label>
                                 <textarea rows={4} placeholder="How can we help?" style={{ padding: '0.75rem', border: '1px solid #e2e8f0', borderRadius: '8px', resize: 'none' }}></textarea>
                             </div>
-                            <button className="btn btn-primary" type="submit">Send Message</button>
+                            <button className="btn btn-primary" type="submit" style={{ padding: '1rem' }}>Send Message</button>
                         </form>
                     </div>
                 </div>
             </section>
+
+            <style>{`
+        @media (max-width: 968px) {
+          .contact-page h1 { font-size: 2.5rem !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+        }
+        @media (max-width: 480px) {
+          .form-row { grid-template-columns: 1fr !important; }
+          .section-padding { padding: 3rem 0 !important; }
+        }
+      `}</style>
         </div>
     );
 };

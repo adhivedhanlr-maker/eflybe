@@ -53,6 +53,16 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            <style>{`
+        @media (max-width: 968px) {
+          .about-page h1 { font-size: 2.5rem !important; }
+          .about-page .container { grid-template-columns: 1fr !important; gap: 3rem !important; }
+        }
+        @media (max-width: 480px) {
+          .about-page h1 { font-size: 2rem !important; }
+          .section-padding { padding: 3rem 0 !important; }
+        }
+      `}</style>
         </div>
     );
 };

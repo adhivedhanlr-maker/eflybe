@@ -3,6 +3,8 @@ import { MousePointer2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import heroVector from '../../assets/hero-vector.png';
+import logoIcon from '../../assets/logo-icon.png';
+import logoText from '../../assets/logo-text.png';
 
 const Hero = () => {
     return (
@@ -25,6 +27,12 @@ const Hero = () => {
                     transition={{ duration: 0.6 }}
                     className="hero-content"
                 >
+                    {/* Mobile Only Branding */}
+                    <div className="hero-mobile-branding" style={{ display: 'none', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
+                        <img src={logoIcon} alt="eFlybe Icon" style={{ height: '48px', objectFit: 'contain' }} />
+                        <img src={logoText} alt="eFlybe" style={{ height: '32px', objectFit: 'contain' }} />
+                    </div>
+
                     <div className="hero-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', backgroundColor: 'rgba(37, 99, 235, 0.08)', color: 'var(--secondary-blue)', borderRadius: '100px', fontSize: '0.8rem', fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.02em' }}>
                         <MousePointer2 size={14} /> Smart Automation for Modern Businesses
                     </div>
@@ -68,33 +76,23 @@ const Hero = () => {
             <style>{`
         @media (max-width: 768px) {
           .hero-section { 
-            padding: 8rem 0 6rem 0 !important; 
-            min-height: 85vh !important;
+            padding: 6rem 0 5rem 0 !important; 
+            min-height: 80vh !important;
             display: flex;
             align-items: center;
           }
           .hero-grid { 
             grid-template-columns: 1fr !important; 
             text-align: center !important; 
-            position: relative;
-            z-index: 1;
           }
-          .hero-title { font-size: 2.5rem !important; margin-bottom: 1.25rem !important; }
-          .hero-subtext { font-size: 1.1rem !important; margin-bottom: 3rem !important; opacity: 0.9; }
+          .hero-mobile-branding { display: flex !important; }
+          .hero-title { font-size: 2.25rem !important; margin-bottom: 1.25rem !important; }
+          .hero-subtext { font-size: 1.05rem !important; margin-bottom: 2.5rem !important; }
           .hero-actions { flex-direction: column; gap: 1rem !important; width: 100%; max-width: 320px; margin: 0 auto; }
-          .hero-actions .btn { width: 100% !important; padding: 1.25rem !important; }
-          .hero-media { 
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            width: 140% !important; 
-            opacity: 0.08 !important;
-            pointer-events: none;
-            z-index: -1;
-          }
-          .hero-content { position: relative; z-index: 10; }
-          .hero-pill { font-size: 0.85rem !important; margin-bottom: 1.5rem !important; margin-inline: auto; }
+          .hero-actions .btn { width: 100% !important; padding: 1.125rem !important; }
+          .hero-media { display: none !important; }
+          .hero-content { width: 100% !important; }
+          .hero-pill { font-size: 0.8rem !important; margin-bottom: 1.25rem !important; margin-inline: auto; }
         }
       `}</style>
         </section>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { MousePointer2, ArrowRight, Target, Cpu, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import heroVector from '../../assets/hero-vector.png';
+import heroIllustration from '../../assets/hero-illustration.png';
 import logoIcon from '../../assets/logo-icon.png';
 import logoText from '../../assets/logo-text.png';
 
@@ -130,13 +130,14 @@ const Hero = () => {
                     className="hero-media"
                 >
                     <img
-                        src={heroVector}
+                        src={heroIllustration}
                         alt="eFlybe Illustration"
                         style={{
                             width: '100%',
                             height: 'auto',
                             objectFit: 'contain',
-                            filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.06))',
+                            filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.08))',
+                            transform: 'scale(1.05)'
                         }}
                     />
                 </motion.div>

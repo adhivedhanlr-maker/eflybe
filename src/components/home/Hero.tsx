@@ -87,8 +87,8 @@ const Hero = () => {
                             </div>
                         </Link>
 
-                        <Link
-                            to="/enquiry/web-dev"
+                        <a
+                            href="/#portfolio"
                             className="hero-cta-pill"
                             style={{
                                 display: 'flex',
@@ -110,7 +110,7 @@ const Hero = () => {
                                 <div style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--primary-navy)' }}>Website development</div>
                                 <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Premium, high-performance web solutions</div>
                             </div>
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="hero-actions desktop-actions" style={{ display: 'flex', gap: '1rem', marginTop: '2.5rem' }}>

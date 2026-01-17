@@ -30,7 +30,7 @@ const Portfolio = () => {
     ];
 
     return (
-        <section className="section-padding portfolio-section" style={{ backgroundColor: '#ffffff' }}>
+        <section id="portfolio" className="section-padding portfolio-section" style={{ backgroundColor: '#ffffff' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <div style={{ color: 'var(--secondary-blue)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2.5px', fontSize: '0.75rem', marginBottom: '1rem' }}>
@@ -70,9 +70,9 @@ const Portfolio = () => {
                         >
                             <div className="portfolio-image-wrapper" style={{
                                 position: 'relative',
-                                paddingTop: '56.25%', // 16:9 aspect ratio
-                                overflow: 'hidden',
-                                height: '240px'
+                                width: '100%',
+                                aspectRatio: '16/9',
+                                overflow: 'hidden'
                             }}>
                                 <img
                                     src={project.image}

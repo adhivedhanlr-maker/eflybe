@@ -143,6 +143,7 @@ const Header = () => {
             </div>
 
             <style>{`
+        @media (min-width: 769px) {
           .logo-text { height: 32px !important; }
           .logo-icon { height: 36px !important; }
           header { padding: 1rem 0 !important; }

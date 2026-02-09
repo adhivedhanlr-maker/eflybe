@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { MousePointer2, ArrowRight, Target, Cpu, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import heroIllustration from '../../assets/hero-illustration.png';
+import heroIllustration from '../../assets/hero-illustration.webp';
 import logoIcon from '../../assets/logo-icon.png';
 import logoText from '../../assets/logo-text.png';
 

@@ -132,6 +132,7 @@ const Hero = () => {
                     <img
                         src={heroIllustration}
                         alt="eFlybe Illustration"
+                        fetchPriority="high"
                         style={{
                             width: '100%',
                             height: 'auto',

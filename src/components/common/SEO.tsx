@@ -7,6 +7,8 @@ interface SEOProps {
     type?: string;
     name?: string;
     image?: string;
+    keywords?: string;
+    schema?: string;
 }
 
 export default function SEO({
@@ -15,7 +17,9 @@ export default function SEO({
     canonical,
     type = 'website',
     name = 'eFlybe Technologies',
-    image = 'https://eflybe.com/logo.png'
+    image = 'https://eflybe.com/logo.png',
+    keywords,
+    schema
 }: SEOProps) {
     const siteTitle = `${title} | ${name}`;
     const currentUrl = canonical || window.location.href;
@@ -25,6 +29,7 @@ export default function SEO({
             {/* Standard metadata tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={description} />
+            {keywords && <meta name="keywords" content={keywords} />}
             <link rel="canonical" href={currentUrl} />
 
             {/* Open Graph tags */}
@@ -39,6 +44,13 @@ export default function SEO({
             <meta name="twitter:title" content={siteTitle} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={image} />
+
+            {/* Structured Data (Schema.org) */}
+            {schema && (
+                <script type="application/ld+json">
+                    {schema}
+                </script>
+            )}
         </Helmet>
     );
 }

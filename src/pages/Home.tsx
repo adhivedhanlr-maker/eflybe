@@ -71,12 +71,29 @@ const Home = () => {
         }
     };
 
+    const websiteSchema = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "eFlybe Technologies",
+        "url": "https://eflybe.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://eflybe.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    });
+
     return (
         <div className="home-page">
             <SEO
                 title="Home"
                 description="eFlybe Technologies - Smart Business Automation, Custom Software, and Financial Reporting Solutions for Indian Businesses."
+                keywords="Business Automation, SaaS, Indian IT Company, DPR Software, Web Development, eFlybe"
                 canonical="https://eflybe.com/"
+                schema={websiteSchema}
             />
             <Hero />
 

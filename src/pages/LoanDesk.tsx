@@ -15,12 +15,28 @@ const LoanDesk = () => {
         { icon: <Lock color="#2563EB" />, title: 'Privacy Focused', desc: 'We do not sell or share your sensitive project data with third parties.' },
     ];
 
+    const productSchema = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "eFlybe LoanDesk",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "description": "Automated Detailed Project Report (DPR) and CMA data generation software for Indian bank loans."
+    });
+
     return (
         <div className="loandesk-page">
             <SEO
-                title="LoanDesk - DPR & CMA Software"
-                description="Generate detailed project reports and CMA data in minutes. The preferred tool for CAs and Consultants."
+                title="Detailed Project Report (DPR) & CMA Software"
+                description="Generate bank-ready Detailed Project Reports (DPR) and CMA data in minutes. The best automated project report software for CAs, Consultants, and MSMEs in India."
+                keywords="DPR, Detailed Project Report, CMA Data, Bank Loan Report, Project Report Software, LoanDesk"
                 canonical="https://eflybe.com/loandesk"
+                schema={productSchema}
             />
             <section className="section-padding gradient-bg">
                 <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SEO from '../components/common/SEO';
 import Hero from '../components/home/Hero';
 import { Target, Lightbulb, TrendingUp, ShieldCheck, Cpu, BarChart3, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -72,6 +73,11 @@ const Home = () => {
 
     return (
         <div className="home-page">
+            <SEO
+                title="Home"
+                description="eFlybe Technologies - Smart Business Automation, Custom Software, and Financial Reporting Solutions for Indian Businesses."
+                canonical="https://eflybe.com/"
+            />
             <Hero />
 
             {/* Solving Problems - Mobile Slider / Desktop Grid */}

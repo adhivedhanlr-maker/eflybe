@@ -1,8 +1,14 @@
 import { Mail, Phone, MessageSquare } from 'lucide-react';
+import SEO from '../components/common/SEO';
 
 const Contact = () => {
     return (
         <div className="contact-page">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with eFlybe Technologies. We are here to help you with business automation and software solutions."
+                canonical="https://eflybe.com/contact"
+            />
             <section className="section-padding gradient-bg">
                 <div className="container" style={{ textAlign: 'center' }}>
                     <h1 style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', marginBottom: '1rem' }}>Contact Us</h1>

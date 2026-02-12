@@ -1,6 +1,13 @@
+import SEO from '../components/common/SEO';
+
 const About = () => {
     return (
         <div className="about-page">
+            <SEO
+                title="About Us"
+                description="Learn about eFlybe Technologies, our mission to empower Indian businesses through automation, and our vision for the future."
+                canonical="https://eflybe.com/about"
+            />
             <section className="section-padding gradient-bg">
                 <div className="container">
                     <div style={{ maxWidth: '800px' }}>

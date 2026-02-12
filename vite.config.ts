@@ -11,10 +11,14 @@ export default defineConfig({
     Sitemap({
       hostname: 'https://eflybe.com',
       dynamicRoutes: [
-        '/',
         '/loandesk',
         '/about',
-        '/contact'
+        '/contact',
+        '/privacy',
+        '/terms',
+        '/disclaimer',
+        '/enquiry/ai-software',
+        '/enquiry/web-dev'
       ]
     }),
     ViteImageOptimizer({

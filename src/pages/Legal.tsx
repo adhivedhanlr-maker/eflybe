@@ -1,3 +1,5 @@
+import SEO from '../components/common/SEO';
+
 interface LegalProps {
     type: 'privacy' | 'terms' | 'disclaimer';
 }
@@ -49,6 +51,11 @@ const Legal = ({ type }: LegalProps) => {
 
     return (
         <div className="legal-page">
+            <SEO
+                title={active.title}
+                description={active.intro}
+                canonical={`https://eflybe.com/${type}`}
+            />
             <section className="section-padding" style={{ backgroundColor: '#f8fafc' }}>
                 <div className="container">
                     <div style={{ maxWidth: '800px', margin: '0 auto' }}>

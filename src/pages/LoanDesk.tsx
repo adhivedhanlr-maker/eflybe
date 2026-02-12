@@ -4,6 +4,8 @@ import ss1 from '../assets/loandesk/ss1.png';
 import ss2 from '../assets/loandesk/ss2.png';
 import ss3 from '../assets/loandesk/ss3.png';
 
+import SEO from '../components/common/SEO';
+
 const LoanDesk = () => {
     const loandeskImages = [ss1, ss2, ss3];
     const features = [
@@ -15,6 +17,11 @@ const LoanDesk = () => {
 
     return (
         <div className="loandesk-page">
+            <SEO
+                title="LoanDesk - DPR & CMA Software"
+                description="Generate detailed project reports and CMA data in minutes. The preferred tool for CAs and Consultants."
+                canonical="https://eflybe.com/loandesk"
+            />
             <section className="section-padding gradient-bg">
                 <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
                     <div>

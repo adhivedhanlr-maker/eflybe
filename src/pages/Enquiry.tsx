@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Mail, MessageSquare, Cpu, Globe, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/common/SEO';
 
 const Enquiry = () => {
     const { serviceId } = useParams();
@@ -23,6 +24,11 @@ const Enquiry = () => {
 
     return (
         <div className="enquiry-page">
+            <SEO
+                title={currentService.title}
+                description={currentService.tagline}
+                canonical={`https://eflybe.com/enquiry/${serviceId}`}
+            />
             <section className="section-padding gradient-bg">
                 <div className="container" style={{ textAlign: 'center' }}>
                     <div style={{ display: 'inline-flex', padding: '0.75rem', background: 'white', borderRadius: '12px', marginBottom: '1.5rem', boxShadow: 'var(--shadow-soft)' }}>
